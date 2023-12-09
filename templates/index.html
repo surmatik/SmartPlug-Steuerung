@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Weihnachtsbeleuchtung</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            background-color: #222;
+            color: #fff;
+        }
+        h1 {
+            margin-bottom: 30px;
+        }
+        .container-fluid {
+            padding: 30px;
+            text-align: center;
+            color: #fff;
+        }
+        .lamp-control {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #333;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .lamp-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+        .btn-custom {
+            font-size: 24px;
+            width: 200px;
+            height: 80px;
+            color: #fff; /* Hinzugefügt */
+        }
+        .btn-success {
+            background-color: #28a745;
+            border-color: #28a745;
+        }
+        .btn-danger {
+            background-color: #dc3545;
+            border-color: #dc3545;
+        }
+        .btn-success:hover, .btn-success:focus {
+            background-color: #218838;
+            border-color: #1e7e34;
+        }
+        .btn-danger:hover, .btn-danger:focus {
+            background-color: #c82333;
+            border-color: #bd2130;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <h1>Weihnachtsbeleuchtung</h1>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="lamp-control">
+                    <h2 class="lamp-title">Lampe 1</h2>
+                    <button id="onButton1" class="btn btn-success btn-custom mr-3"><i class="fas fa-lightbulb"></i> Ein</button>
+                    <button id="offButton1" class="btn btn-danger btn-custom"><i class="far fa-lightbulb"></i> Aus</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#onButton1').click(function(){
+                $.ajax({
+                    type: 'POST',
+                    url: '/on_lampe1',
+                    success: function(response) {
+                        console.log(response.status);
+                    }
+                });
+            });
+
+            $('#offButton1').click(function(){
+                $.ajax({
+                    type: 'POST',
+                    url: '/off_lampe1',
+                    success: function(response) {
+                        console.log(response.status);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
