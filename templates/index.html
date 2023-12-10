@@ -67,6 +67,11 @@
                     <button id="onButton1" class="btn btn-success btn-custom mr-3"><i class="fas fa-lightbulb"></i> Ein</button>
                     <button id="offButton1" class="btn btn-danger btn-custom"><i class="far fa-lightbulb"></i> Aus</button>
                 </div>
+                <div class="lamp-control">
+                    <h2 class="lamp-title">Lampe 2</h2>
+                    <button id="onButton2" class="btn btn-success btn-custom mr-3"><i class="fas fa-lightbulb"></i> Ein</button>
+                    <button id="offButton2" class="btn btn-danger btn-custom"><i class="far fa-lightbulb"></i> Aus</button>
+                </div>
             </div>
         </div>
     </div>
@@ -89,6 +94,26 @@
                 $.ajax({
                     type: 'POST',
                     url: '/off_lampe1',
+                    success: function(response) {
+                        console.log(response.status);
+                    }
+                });
+            });
+
+            $('#onButton2').click(function(){
+                $.ajax({
+                    type: 'POST',
+                    url: '/on_lampe2',
+                    success: function(response) {
+                        console.log(response.status);
+                    }
+                });
+            });
+
+            $('#offButton2').click(function(){
+                $.ajax({
+                    type: 'POST',
+                    url: '/off_lampe2',
                     success: function(response) {
                         console.log(response.status);
                     }
