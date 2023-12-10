@@ -4,8 +4,8 @@ from pyW215.pyW215 import SmartPlug, ON, OFF
 app = Flask(__name__)
 
 # Erstelle Instanzen der Smart Plugs für Lampe 1 und Lampe 2
-sp_lampe1 = SmartPlug('192.168.1.155:', '397381')
-sp_lampe2 = SmartPlug('192.168.1.189:', '740169')
+sp_lampe1 = SmartPlug('192.168.1.31:', '740169')
+sp_lampe2 = SmartPlug('192.168.1.32:', '397381')
 
 # Funktionen zum Ein- und Ausschalten der Lampen
 def turn_on(plug):
