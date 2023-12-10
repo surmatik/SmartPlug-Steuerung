@@ -10,14 +10,18 @@
         body {
             background-color: #222;
             color: #fff;
+            padding-top: 20px; /* Platz für die Navbar */
         }
         h1 {
-            margin-bottom: 30px;
+            margin-bottom: 20px;
+            font-size: 28px; /* Kleiner auf mobilen Geräten */
         }
-        .container-fluid {
-            padding: 30px;
-            text-align: center;
-            color: #fff;
+        .title {
+            margin-bottom: 40px;
+        }
+        .text-title-icon {
+            font-size: 48px;
+            margin-bottom: 10px;
         }
         .lamp-control {
             margin-bottom: 20px;
@@ -34,10 +38,10 @@
             color: #fff;
         }
         .btn-custom {
-            font-size: 24px;
-            width: 200px;
-            height: 80px;
-            color: #fff; /* Hinzugefügt */
+            font-size: 18px;
+            width: 120px;
+            height: 50px;
+            color: #fff;
         }
         .btn-success {
             background-color: #28a745;
@@ -55,22 +59,39 @@
             background-color: #c82333;
             border-color: #bd2130;
         }
+
+        /* 100% Breite für mobile Geräte */
+        @media (max-width: 576px) {
+            .lamp-control {
+                width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="container-fluid">
-        <h1>Weihnachtsbeleuchtung</h1>
-        <div class="row justify-content-center">
-            <div class="col-md-6">
+    <div class="container">
+        <div class="title">
+            <h1 class="text-center text-title-icon"><i class="fas fa-lightbulb"></i></h1>
+            <h1 class="text-center">Smart Plugs<br>Steuerung</h1>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <h2 class="lamp-title">Lampe 1</h2>
                 <div class="lamp-control">
-                    <h2 class="lamp-title">Lampe 1</h2>
-                    <button id="onButton1" class="btn btn-success btn-custom mr-3"><i class="fas fa-lightbulb"></i> Ein</button>
-                    <button id="offButton1" class="btn btn-danger btn-custom"><i class="far fa-lightbulb"></i> Aus</button>
+                    <div class="d-flex justify-content-around">
+                        <button id="onButton1" class="btn btn-success btn-custom"><i class="fas fa-lightbulb"></i> Ein</button>
+                        <button id="offButton1" class="btn btn-danger btn-custom"><i class="far fa-lightbulb"></i> Aus</button>
+                    </div>
                 </div>
+            </div>
+            <div class="col-12">
+                <h2 class="lamp-title">Lampe 2</h2>
                 <div class="lamp-control">
-                    <h2 class="lamp-title">Lampe 2</h2>
-                    <button id="onButton2" class="btn btn-success btn-custom mr-3"><i class="fas fa-lightbulb"></i> Ein</button>
-                    <button id="offButton2" class="btn btn-danger btn-custom"><i class="far fa-lightbulb"></i> Aus</button>
+                    
+                    <div class="d-flex justify-content-around">
+                        <button id="onButton2" class="btn btn-success btn-custom"><i class="fas fa-lightbulb"></i> Ein</button>
+                        <button id="offButton2" class="btn btn-danger btn-custom"><i class="far fa-lightbulb"></i> Aus</button>
+                    </div>
                 </div>
             </div>
         </div>
